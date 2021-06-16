@@ -29,7 +29,7 @@
     <?php
     include 'config.php';
     $id = $_GET['id'];
-    $mahasiswa = mysqli_query($koneksi, "select * from mahasiwa where id='$id'");
+    $mahasiswa = mysqli_query($koneksi, "select * from mahasiwa where id = '$id'");
     while ($data = mysqli_fetch_assoc($mahasiswa)){
     ?>
         <div class="container mt-5">
@@ -42,7 +42,7 @@
                     <p>Nama : <?php echo $data['nama'] ?></p>
                     <p>NIM : <?php echo $data['nim'] ?></p>
                     <p>Alamat : <?php echo $data['alamat'] ?></p>
-                    <button class="btn btn-primary">Cetak</button>
+                    <a href="print.php?id" class="btn btn-primary btn-sm text-white">CETAK</a>
                 </div>
             </div>
         </div>
